@@ -1,49 +1,50 @@
+/* Background setup using :root */
 :root {
-    --main-bg: rgb(135, 206, 235);
+    --page-bg: rgb(135, 206, 235);
 }
 
 body {
-    background-color: var(--main-bg);
-    font-family: sans-serif;
-    padding: 0px;
+    background-color: var(--page-bg);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
 }
 
-/* Article Paragraphs */
-#first-child {
-    color: white;
+/* Paragraph Styles */
+p:first-child {
     background-color: black;
+    color: white;
+    margin-top: 0;
 }
 
-#second-child {
-    color: initial;
+p:nth-child(2) {
+    color: initial; /* Standard color for Lorem Ipsum */
 }
 
-#third-child {
-    color: initial; /* You can specify a color if needed */
+p:last-of-type {
+    color: red; /* Red text for the final paragraph */
 }
 
-#last-of-type {
-    color: red;
-}
-
-/* Unordered List */
+/* List Styles */
 li {
-    background-color: gray;
+    background-color: gray; /* Default background for all items */
     width: 50%;
     padding: 10px;
-    list-style-type: disc;
-    margin-bottom: 2px;
+    list-style-position: inside; /* Keeps bullets aligned inside the box */
 }
 
+/* Every odd item gets a white background */
 li:nth-child(odd) {
     background-color: white;
 }
 
+/* The third-to-last item (Pink) must come after the odd selector to override it */
+li:nth-last-child(3) {
+    background-color: pink;
+}
+
+/* Font size for the first and last items */
 li:first-child, 
 li:last-child {
     font-size: 22px;
-}
-
-li:nth-last-child(3) {
-    background-color: pink;
 }
